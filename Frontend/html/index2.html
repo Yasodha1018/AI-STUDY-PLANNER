@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | AI Study Planner</title>
+    <link rel="stylesheet" href="/AI-STUDY-PLANNER/Frontend/style/style2.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">AI Planner</h2>
+        <ul>
+            <li class="active">My Dashboard</li>
+        </ul>
+       <form action="">
+       <input type="submit" value="logout" style="padding: 4px 8px; background-color: rgb(186, 186, 191); color: white; border-radius: 5px; border: none;font-weight: bold;font-size: 20px;">
+       </form>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
+<main class="main">
+
+    <header class="topbar">
+        <h1>Good Afternoon 👋</h1>
+        <p>Generate your personalized study schedule</p>
+    </header>
+
+    <!-- CENTER CONTAINER -->
+    <div class="center-wrapper">
+
+        <!-- FORM CARD -->
+        <section class="card">
+            <h2>Study Planner</h2>
+
+            <form action="/generate" method="POST">
+
+                <label>Subjects (comma separated)</label>
+                <textarea name="subjects" placeholder="Math, Physics, ML" required></textarea>
+
+                <label>Hours per Day</label>
+                <input type="number" name="hours" min="1" required>
+
+                <label>Study Duration</label>
+                <select name="duration">
+                    <option value="days">Days</option>
+                    <option value="months">Months</option>
+                </select>
+
+                <label>Equal Time for All Subjects?</label>
+                <select name="equal_time">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <label>Subject Difficulty (1–5)</label>
+                <textarea name="difficulty" placeholder="Math:5, Physics:3, ML:4" required></textarea>
+
+                <label>First Preference Subject</label>
+                <input type="text" name="priority" placeholder="Math" required>
+
+                <label>Schedule Type</label>
+                <select name="exam_day">
+                    <option value="no">Normal Day</option>
+                    <option value="yes">Exam Scheduled</option>
+                </select>
+
+                <label>Include Break Time?</label>
+                <select name="break_time">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <button type="submit">Generate Study Schedule</button>
+
+            </form>
+        </section>
+
+    </div>
+
+</main>
+
+
+
+
+
+</div>
+
+</body>
+</html>
