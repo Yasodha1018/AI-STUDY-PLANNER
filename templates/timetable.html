@@ -1,0 +1,57 @@
+{% include'header.html' %}
+
+<body>
+
+<!-- AI animated background -->
+<div class="bg-circles">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Navbar -->
+<nav>
+    <h1>AI Study Planner</h1>
+    <!-- <a href="/" style="text-decoration: none; background-color: orangered; color: black; padding: 5px 8px; border-radius: 5px; border: none;">Login</a> -->
+</nav>
+
+<!-- Main content -->
+<div class="container" style="height: 80%; width: 100%; display: flex; align-items: center; justify-content: center;">
+<div style="
+    width:420px;
+    margin:60px auto;
+    padding:25px;
+    border:2px solid #ccc;
+    border-radius:15px;
+    font-family:Segoe UI, Tahoma, sans-serif;
+    background:#0f0d0d;
+">
+
+    <h2 style="text-align:center; color:rgb(247, 243, 243)">
+        AI Generated Timetable
+    </h2>
+
+    <p><b>Total Hours:</b> {{ total_hours }}</p>
+    <p><b>Mode:</b> {{ mode }}</p>
+    <p><b>Difficulty:</b> {{ difficulty }}</p>
+
+    <hr style="margin:15px 0;">
+
+    {% for t in timetable %}
+        <p>📘 <b>{{ t.subject }}</b> → {{ t.hours }} hrs</p>
+    {% endfor %}
+
+    <br>
+<a href="/generate" style="padding: 10px 20px ; background-color: blue ; border-radius: 10px; color: white;text-decoration: none;">Generate Again</a>
+
+</div>
+
+
+</div>
+
+<footer>
+    © 2025 AI Study Planner | Smart Learning with AI
+</footer>
+
+</body>
+</html>
